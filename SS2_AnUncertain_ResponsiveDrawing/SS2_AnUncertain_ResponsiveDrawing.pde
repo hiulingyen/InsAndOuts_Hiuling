@@ -33,7 +33,10 @@ void draw(){
    stroke(155);
    strokeWeight(2);
    quad(2, 15, 30, 60, 120, 80, 80, 40);
-  } else {
+  } else if (keyPressed == true){
+   background(random(255));
+  }
+  else {
    fill(255, 255, 255,80);
    stroke(155);
    strokeWeight(2);

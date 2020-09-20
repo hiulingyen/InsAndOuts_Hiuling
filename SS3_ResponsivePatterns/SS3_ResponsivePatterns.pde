@@ -23,13 +23,11 @@ void draw(){
   fill(255);
   int p = 0;
   int o = 0;
-  //for(p = 0; p < 100; p += 10 ){
-  while (o < 100){
+  for(p = 0; p < 100; p += 10 ){
       stroke(0);
-        //while (p < 100){
       stroke(0);
-      line(o,0,width,o);
-    o = o+10;
+      line(p,0,width,p);
+    p = p+10;
   //}
 }
   
