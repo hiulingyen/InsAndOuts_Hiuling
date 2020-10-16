@@ -7,7 +7,7 @@
 //float b = random(0, 255);
   PImage imge; 
   PFont f; 
-  color fillVal = color(126);
+  String state = "gameStart";
 
 void setup(){
   size(800, 800);
@@ -17,20 +17,17 @@ void setup(){
 }
 
 void draw(){
-
+  //if 
   //float bx = pmouseX;
   //float by = pmouseY;
  // ellipse (mouseX-50, mouseY, 50, 50);
  // line (mouseX, mouseY, bx, by);
-  background(200);
+  //background(200);
 //  image(imge, 0, 0, width, height);
-    fill(fillVal);
   fill(0, 0, 200);
   textFont(f, 28);
   text("You are a little bug, Try to live under all the cituation!", 100, 100);
-  text("Press 1 to start to alive", 100, 200);
-
-
+  text("Press s to start to alive", 100, 200);
   BUGstay();
 
 //int i = 0;
@@ -56,9 +53,8 @@ void draw(){
   //
   }
   void keyPressed() {
-  if (key == UP) {
-  BUG();
-    rect(25, 25, 50, 50);
+  if (key == 's' || key == 'S') {
+  state = "GameLoad";
   }
 }
  //<>//
