@@ -87,7 +87,7 @@ void mousePressed() {
   } else if (state=="Dead1") {
     state= "gameStart";
   }
-}
+} //<>//
 void BugMove(){
    if(mouseX < 300){
    BugLeft();

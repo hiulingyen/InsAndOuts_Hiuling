@@ -61,19 +61,50 @@ if (state=="Start") {
     textFont(f, 24);
     fill(255, 255, 255);
     text("press A to the House, D to Garden to find some FOOD!", 20, 20 ,500, 100);
-
-    //if (ellipseY>50) { 
-    //  state="Dead";
-    //  ellipseY=0; 
-      
-//    }
-//  } else if (state=="Dead") {
-//    background(255, 0, 0);
-//    text("everyone loses.", width/2, height/2);
-//    text("click to play again.", width/2, height/2 + 50);
-//  }
+    if (key == 'a' || key == 'A') {
+    state = "Scene2";
+  }else if(key == 'd' || key == 'D') {
+    state = "Scene3";
+  }
+  } 
+  ///////////////////////////////
+     if (state=="Scene2") {
+    background(0, 100, 10);
+    image(Kitchen, 0, 100, 500, 500);
+    image(TV, 300, 100, 500, 500);
+    BugMove();
+    textFont(f, 24);
+    fill(255, 255, 255);
+    text("press A to the Kitchen, D to Livingroom to find some FOOD!", 20, 20 ,500, 100);
+    if (key == 'a' || key == 'A') {
+    state = "Scene4";
+  }else if(key == 'd' || key == 'D') {
+    state = "Scene5";
+  }
+  } 
+ 
+  //////////////////////////////
+ if (state=="Scene4") {
+    background(0, 100, 10);
+    image(Popcorn, 0, 100, 500, 500);
+    image(TV, 300, 100, 500, 500);
+    BugMove();
+    textFont(f, 24);
+    fill(255, 255, 255);
+    text("A Human! press A to the pick up a popcorn, D to leave!", 20, 20 ,500, 100);
+    if (key == 'a' || key == 'A') {
+    state = "Scene6";
+  }else if(key == 'd' || key == 'D') {
+    state = "Scene7";
+  }
+  }
+  ///////////////////////////////
+  else if (state=="Dead") {
+    background(255, 0, 0);
+    text("Sorry, you didn't make it", width/2, height/2);
+    text("Click the mouse to restart.", width/2, height/2 + 50);
+  }
   println(state);
-}
 }
   void keyPressed() {
   if (key == 's' || key == 'S') {
@@ -84,10 +115,10 @@ if (state=="Start") {
 void mousePressed() {
   if (state== "Dead") {
     state="Start";
-  } else if (state=="Dead1") {
+  } else if (state=="Dead") {
     state= "gameStart";
   }
-}
+} //<>//
 void BugMove(){
    if(mouseX < 300){
    BugLeft();
