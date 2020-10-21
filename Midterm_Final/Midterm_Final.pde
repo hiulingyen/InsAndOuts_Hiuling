@@ -48,11 +48,14 @@ void draw(){
 
 if (state=="Start") {
     image(House, 0, 0, width, height);
-    fill(255, 255, 255);
+    fill(0, 0, 0);
     textFont(f, 28);
-    text("You are a hungry bug, Try to live under all the cituation!", 100, 100);
-    text("Press s to start to alive", 100, 200);
+    text("You are a hungry bug, Try to live under all the cituation!", 80, 40, 500, 100);
+    text("Press s to start to alive", 80, 150);
     BugStay();
+      if (key == 's' || key == 'S') {
+  state = "Scene1";
+  }
   } else if (state=="Scene1") {
     background(0, 100, 10);
     image(House, 0, 100, 500, 500);
@@ -60,64 +63,77 @@ if (state=="Start") {
     BugMove();
     textFont(f, 24);
     fill(255, 255, 255);
-    text("press A to the House, D to Garden to find some FOOD!", 20, 20 ,500, 100);
-    if (key == 'a' || key == 'A') {
+    text("press 1 to the House, 2 to Garden to find some FOOD!", 20, 20 ,500, 100);
+    if (key == '1') {
     state = "Scene2";
-  }else if(key == 'd' || key == 'D') {
+  }else if(key == '2') {
     state = "Scene3";
   }
   } 
   ///////////////////////////////
-     if (state=="Scene2") {
+    else if (state=="Scene2") {
     background(0, 100, 10);
-    image(Kitchen, 0, 100, 500, 500);
-    image(TV, 300, 100, 500, 500);
+    image(TV, 0, 100, 500, 500);
+    image(Kitchen, 300, 100, 500, 500);
     BugMove();
     textFont(f, 24);
     fill(255, 255, 255);
-    text("press A to the Kitchen, D to Livingroom to find some FOOD!", 20, 20 ,500, 100);
-    if (key == 'a' || key == 'A') {
+    text("press 3 to the Livingroom, 4 to Kitchen to find some FOOD!", 20, 20 ,500, 100);
+    if (key == '3') {
     state = "Scene4";
-  }else if(key == 'd' || key == 'D') {
+  }else if(key == '4') {
     state = "Scene5";
   }
   } 
  
   //////////////////////////////
- if (state=="Scene4") {
+ else if (state=="Scene4") {
     background(0, 100, 10);
     image(Popcorn, 0, 100, 500, 500);
     image(TV, 300, 100, 500, 500);
     BugMove();
     textFont(f, 24);
     fill(255, 255, 255);
-    text("A Human! press A to the pick up a popcorn, D to leave!", 20, 20 ,500, 100);
-    if (key == 'a' || key == 'A') {
+    text("A Human! press 5 to the pick up a popcorn, 6 to leave!", 20, 20 ,500, 100);
+    if (key == '5') {
     state = "Scene6";
-  }else if(key == 'd' || key == 'D') {
+  }else if(key == '6') {
     state = "Scene7";
+  }
+  }
+    //////////////////////////////
+ else if (state=="Scene6") {
+    background(0, 100, 10);
+    image(Clap, 50, 50, 500, 500);
+//    image(TV, 300, 100, 500, 500);
+    BugMove();
+    textFont(f, 24);
+    fill(255, 255, 255);
+    text("Noooooo! Get out from there! PRESS Q !!!", 20, 20 ,500, 100);
+    if (key == 'q' || key == 'Q' ) {
+    state = "Dead";
+  }else if(key == '8') {
+    state = "Scene9";
   }
   }
   ///////////////////////////////
   else if (state=="Dead") {
     background(255, 0, 0);
-    text("Sorry, you didn't make it", width/2, height/2);
-    text("Click the mouse to restart.", width/2, height/2 + 50);
+    image(Dead, 50, 50, 500, 500);
+    fill(0, 0, 0);
+    text("Sorry, you didn't make it Click the mouse to restart.", 20, 20 ,500, 100);
+
   }
   println(state);
 }
   void keyPressed() {
-  if (key == 's' || key == 'S') {
-  state = "Scene1";
-  }
+
 }
 
 void mousePressed() {
   if (state== "Dead") {
     state="Start";
-  } else if (state=="Dead") {
-    state= "gameStart";
-  }
+  } 
 } //<>//
 void BugMove(){
    if(mouseX < 300){
