@@ -105,15 +105,12 @@ if (state=="Start") {
  else if (state=="Scene6") {
     background(0, 100, 10);
     image(Clap, 50, 50, 500, 500);
-//    image(TV, 300, 100, 500, 500);
     BugMove();
     textFont(f, 24);
     fill(255, 255, 255);
-    text("Noooooo! Get out from there! PRESS Q !!!", 20, 20 ,500, 100);
+    text("Noooooo! No.9177 Get out from there! PRESS Q !!!", 20, 20 ,500, 100);
     if (key == 'q' || key == 'Q' ) {
     state = "Dead";
-  }else if(key == '8') {
-    state = "Scene9";
   }
   }
   ///////////////////////////////
