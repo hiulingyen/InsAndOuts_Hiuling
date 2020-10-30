@@ -74,18 +74,29 @@ if (state=="Start") {
     else if (state=="Scene2") {
     background(0, 100, 10);
     image(TV, 0, 100, 500, 500);
-    image(Kitchen, 300, 100, 500, 500);
     BugMove();
     textFont(f, 24);
     fill(255, 255, 255);
-    text("press 3 to the Livingroom, 4 to Kitchen to find some FOOD!", 20, 20 ,500, 100);
+    text("You are in the Living Room, press 3 to find some FOOD!", 20, 20 ,500, 100);
     if (key == '3') {
     state = "Scene4";
-  }else if(key == '4') {
-    state = "Scene5";
   }
   } 
- 
+   ///////////////////////////////
+    else if (state=="Scene3") {
+    background(0, 100, 10);
+    image(Grass, 0, 100, 500, 500);
+    image(Flowers, 300, 100, 500, 500);
+    BugMove();
+    textFont(f, 24);
+    fill(255, 255, 255);
+    text("You are in the Garden now, press 3 to the grass, 4 to Flowers to find some FOOD!", 20, 20 ,500, 100);
+    if (key == '3') {
+    state = "Scene8";
+  }else if(key == '4') {
+    state = "Scene9";
+  }
+  } 
   //////////////////////////////
  else if (state=="Scene4") {
     background(0, 100, 10);
@@ -94,17 +105,17 @@ if (state=="Start") {
     BugMove();
     textFont(f, 24);
     fill(255, 255, 255);
-    text("A Human! press 5 to the pick up a popcorn, 6 to leave!", 20, 20 ,500, 100);
-    if (key == '5') {
+    text("A Human! press 1 to the pick up a popcorn, 2 to leave!", 20, 20 ,500, 100);
+    if (key == '1') {
     state = "Scene6";
-  }else if(key == '6') {
+  }else if(key == '2') {
     state = "Scene7";
   }
   }
     //////////////////////////////
  else if (state=="Scene6") {
     background(0, 100, 10);
-    image(Clap, 50, 50, 500, 500);
+    image(Clap, 50, 100, 500, 500);
     BugMove();
     textFont(f, 24);
     fill(255, 255, 255);
@@ -113,10 +124,58 @@ if (state=="Start") {
     state = "Dead";
   }
   }
+  //////////////////////////////
+ else if (state=="Scene7") {
+    background(0, 100, 10);
+    image(Spraying, 50, 100, 500, 500);
+    BugMove();
+    textFont(f, 24);
+    fill(255, 255, 255);
+    text("Noooooo! No.9177 Get out from there! PRESS Q !!!", 20, 20 ,500, 100);
+    if (key == 'q' || key == 'Q' ) {
+    state = "Dead";
+  }
+  }
+  //////////////////////////////
+ else if (state=="Scene8") {
+    background(0, 100, 10);
+    image(SprayGrass, 50, 100, 500, 500);
+    BugMove();
+    textFont(f, 24);
+    fill(255, 255, 255);
+    text("Wait! What is that smell? Noooooo! No.9177 Get out from there! PRESS Q !!!", 20, 20 ,500, 100);
+    if (key == 'q' || key == 'Q' ) {
+    state = "Dead";
+  }
+  }
+  ///////////////////////////////
+    else if (state=="Scene9") {
+    background(0, 100, 10);
+    image(Flower, 50, 100, 500, 500);
+    BugMove();
+    textFont(f, 24);
+    fill(255, 255, 255);
+    text("What a nice snack! Let's enjoy...Wait! Is there anything behind that? Press C to look closer.", 20, 20 ,500, 100);
+    if (key == 'c' || key == 'C') {
+    state = "Scene10";
+  }
+  } 
+  ///////////////////////////////
+    else if (state=="Scene10") {
+    background(0, 100, 10);
+    image(Mantis, 50, 100, 500, 500);
+    BugMove();
+    textFont(f, 24);
+    fill(255, 255, 255);
+    text("Is that a...Noooo!No.9177 FLY away! PRESS Q !!!", 20, 20 ,500, 100);
+    if (key == 'q' || key == 'Q') {
+    state = "Dead";
+  }
+  } 
   ///////////////////////////////
   else if (state=="Dead") {
     background(255, 0, 0);
-    image(Dead, 50, 50, 500, 500);
+    image(Dead, 50, 100, 500, 500);
     fill(0, 0, 0);
     text("Sorry, you didn't make it Click the mouse to restart.", 20, 20 ,500, 100);
 
