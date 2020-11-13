@@ -2,8 +2,8 @@
   import processing.serial.*; 
   Serial myPort; 
   int val=0; 
-  int i;
-  int r;
+  int i = 500;
+  int r = 500;
   PImage Grass;
 
 void setup(){
@@ -22,41 +22,48 @@ void draw(){
     if ( myPort.available() > 0) { 
     val = myPort.read();
   }
-  if (val>=50){
+  if (val > 50){
     image(Grass, 0, 0, width, height);
     BugLeft();
-    i = i + val;
-    r = r + val;
+    i = val;
+    r = val;
     
  
-  if (val>=65){
+  if (val > 50 && val < 70){
     image(Grass, 0, 0, width, height);
   BugLeft();
-      i = i + val;
-      r = r + val;
+      i = val*2;
+      r = val*2;
       
   }
-  if (val>=200){
+  if (val > 80 && val < 90){
     image(Grass, 0, 0, width, height);
-      BugLeft();
-          i = i + val;
-          r = r + val;
-          
+  BugLeft();
+      i = val*2;
+      r = val*2;
+      
   }
-    if (val>=227){
-      image(Grass, 0, 0, width, height);
-      BugLeft();
-          i = i + val;
-          r = r + val;
-          
+  if (val > 90 && val < 100){
+    image(Grass, 0, 0, width, height);
+  BugLeft();
+      i = val*2;
+      r = val*2;
+      
   }
-   if (val<70){
-     image(Grass, 0, 0, width, height);
-     BugRight();
-     i = i + val;
-     r = r + val;
-     
- }
+    if (val > 100 && val < 120){
+    image(Grass, 0, 0, width, height);
+  BugLeft();
+      i = val*2;
+      r = val*2;
+      
+  }
+   if (val > 120 && val < 140){
+    image(Grass, 0, 0, width, height);
+  BugLeft();
+      i = val*2;
+      r = val*2;
+      
+  }
  }
 
 }
