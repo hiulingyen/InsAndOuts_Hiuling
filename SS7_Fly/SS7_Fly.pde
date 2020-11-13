@@ -36,28 +36,28 @@ void draw(){
       r = val*2;
       
   }
-  if (val > 80 && val < 90){
+  if (val > 70 && val < 90){
     image(Grass, 0, 0, width, height);
   BugLeft();
       i = val*2;
       r = val*2;
       
   }
-  if (val > 90 && val < 100){
+  if (val > 90 && val < 110){
     image(Grass, 0, 0, width, height);
   BugLeft();
       i = val*2;
       r = val*2;
       
   }
-    if (val > 100 && val < 120){
+    if (val > 110 && val < 130){
     image(Grass, 0, 0, width, height);
   BugLeft();
       i = val*2;
       r = val*2;
       
   }
-   if (val > 120 && val < 140){
+   if (val > 130 && val < 150){
     image(Grass, 0, 0, width, height);
   BugLeft();
       i = val*2;
