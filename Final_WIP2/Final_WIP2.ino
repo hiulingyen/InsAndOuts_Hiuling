@@ -1,5 +1,7 @@
 int sensorPin = A0;
 int sensorValue = 0;
+const int buttonPin = 13;
+int buttonState = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -9,38 +11,36 @@ void setup() {
   pinMode(5, OUTPUT);
   pinMode(6, OUTPUT);
   pinMode(7, OUTPUT);
-  pinMode(8, OUTPUT);
-  pinMode(9, OUTPUT);
+
+  pinMode(buttonPin, INPUT);
+
 }
 
 void loop() {
   sensorValue = analogRead(sensorPin);
   Serial.println(sensorValue);
+  
+  buttonState = digitalRead(buttonPin);
 
-    if (sensorValue>500){
+  if (buttonState == LOW) {
+     digitalWrite(6, HIGH);  //EYES
+     digitalWrite(7, HIGH);  //EYES
+   } 
+   else if (buttonState == HIGH){
+     digitalWrite(6, LOW);  //EYES
+     digitalWrite(7, LOW);  //EYES
+   }
+   if (sensorValue>500){
     digitalWrite(2, HIGH);
-    digitalWrite(3, HIGH);
-    
-    digitalWrite(4, HIGH);
-    digitalWrite(5, HIGH);
-    digitalWrite(6, HIGH);
-    digitalWrite(7, HIGH);
-    
-    digitalWrite(8, LOW);
-    digitalWrite(9, LOW);
-
+    digitalWrite(3, LOW);  //SMILE
+    digitalWrite(4, HIGH);  
+    digitalWrite(5, LOW);  //SMILE
     }
-    else{ 
-    digitalWrite(2, HIGH);
-    digitalWrite(3, HIGH);
-    
-    digitalWrite(4, HIGH);
-    digitalWrite(5, HIGH);
-    digitalWrite(6, LOW);
-    digitalWrite(7, LOW);
-    
-    digitalWrite(8, HIGH);
-    digitalWrite(9, HIGH);
-
+   else{ 
+   digitalWrite(2, HIGH);
+   digitalWrite(3, HIGH);
+  
+   digitalWrite(4, HIGH);  //SMILE
+   digitalWrite(5, HIGH);  //SMILE
     }
 }
