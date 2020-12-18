@@ -1,3 +1,5 @@
+//Wrote by Hiuling Yen
+//Title: Be Happy
 int sensorPin = A0;
 int sensorValue = 0;
 const int buttonPin = 13;

@@ -1,4 +1,6 @@
-  import processing.serial.*;  //<>// //<>//
+  //Wrote by Hiuling Yen
+  //Title: Be Happy
+  import processing.serial.*; //<>//
   Serial myPort; 
   int val=0; 
 
